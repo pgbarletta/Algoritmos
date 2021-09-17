@@ -1,0 +1,145 @@
+ácidos nucleicos:
+-----------------
+    DNA: Ácido desoxirribonucleico
+    RNA: Ácido ribonucleico
+
+su monómero es el nucleótido.
+Diferenciados por su base:
+
+DNA: A, C, G, T
+RNA: A, C, G, U
+
+DNA -> RNA -> PROTEÍNA
+
+proteínas:
+----------
+
+su monómero es el aminoácido.
+Diferenciados por cadena lateral.
+
+
+
+
+
+CUU CCA UAU
+
+
+
+LPY
+
+
+
+
+
+
+NEEDLEMAN - WUNSCH
+
+> h. sapiens
+TATC
+
+> m.musculus
+TATG
+
+posibilidad 1:
+-------------
+TATC
+|||
+TATG
+
+
+
+suponiendo que los eventos de:
+perder un nucleótido == probabilidad
+ganar un nucleótido == probabilidad
+mutar un nucleótido == probabilidad
+
+
+
+
+
+
+str_A = TATA
+
+str_B = TCT
+
+1) AGREGAR GAP // SCORE = 0
+3) MISMATCH  // SCORE = -1
+4) MATCH // SCORE = 1
+
+
+TATA
+| |
+TCT-
+
+Score: 1 - 1 + 1 + 0 = 1
+
+
+"T"
+"T"
+
+posibilidad 1:
+---------
+viene de:
+str_A = ""T   ===>
+str_B = ""T   ===>
+
+
+T
+|
+T
+
+score = 1
+
+posibilidad 2:
+---------
+
+T-
+-T
+
+score = 0
+
+posibilidad 3:
+---------
+
+-T
+T-
+
+score = 0
+
+
+  s t r B
+s
+t
+r
+A
+
+ir en sentido horizontal: agregar gap en A
+ir en sentido vertical: agregar gap en B
+ir en sentido diagonal: match/mismatch
+
+seq_A: TATA
+seq_B: TCT
+
+
+T-CT-
+|  |
+TA-TA
+
+score = 2
+
+
+seq_B:   TC-T-
+seq_A:   T-ATA
+
+
+
+formas de construir la solución óptima:
+--------------
+a) modificar el algoritmo original. // utilizando la estructura de datos memoizada
+b) extender el algoritmo original para recuperarla.// utilizando la estructura de datos memoizada
+c)ambas anteriores
+
+
+
+
+
